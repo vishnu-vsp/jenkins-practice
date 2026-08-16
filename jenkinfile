@@ -8,7 +8,8 @@ pipeline
             steps
             {
               echo "Building the project..."
-              sh npm install
+              sh 'npm install'
+              sh 'pip install -r requirements.txt'
             }
         }
         stage('test')
@@ -16,7 +17,8 @@ pipeline
             steps
             {
               echo "Running tests..."
-              sh npm test
+              sh 'npm test'
+              sh 'pytest'
             }
         }
         stage('deploy')
