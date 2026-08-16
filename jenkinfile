@@ -8,6 +8,7 @@ pipeline
             steps
             {
               echo "Building the project..."
+              sh npm install
             }
         }
         stage('test')
@@ -15,6 +16,7 @@ pipeline
             steps
             {
               echo "Running tests..."
+              sh npm test
             }
         }
         stage('deploy')
